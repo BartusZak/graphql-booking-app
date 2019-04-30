@@ -9,7 +9,7 @@ const eventLoader = new DataLoader(eventIds => {
 });
 
 const userLoader = new DataLoader(userIds => {
-  return User.find({ _id: { $id: userIds } });
+  return User.find({ _id: { $in: userIds } });
 });
 
 const events = async eventIds => {
@@ -70,5 +70,9 @@ const transformBooking = booking => {
   };
 };
 
-exports.transformBooking = transformBooking;
 exports.transformEvent = transformEvent;
+exports.transformBooking = transformBooking;
+
+// exports.user = user;
+// exports.events = events;
+// exports.singleEvent = singleEvent;

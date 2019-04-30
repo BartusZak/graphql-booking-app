@@ -10,12 +10,12 @@ type Booking {
 }
 
 type Event {
-    _id: ID!
-    title: String!
-    description: String!
-    price: Float!
-    date: String!
-    creator: User!
+  _id: ID!
+  title: String!
+  description: String!
+  price: Float!
+  date: String!
+  creator: User!
 }
 
 type User {
@@ -26,16 +26,16 @@ type User {
 }
 
 type AuthData {
-    userId: ID!
-    token: String!
-    tokenExpiration: Int!
+  userId: ID!
+  token: String!
+  tokenExpiration: Int!
 }
 
 input EventInput {
-    title: String!
-    description: String!
-    price: Float!
-    date: String!
+  title: String!
+  description: String!
+  price: Float!
+  date: String!
 }
 
 input UserInput {
@@ -56,7 +56,7 @@ type RootMutation {
     cancelBooking(bookingId: ID!): Event!
 }
 
-schema{
+schema {
     query: RootQuery
     mutation: RootMutation
 }
